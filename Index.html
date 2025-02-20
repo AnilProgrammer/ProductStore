@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <title>Product Store</title>
+    <link rel="icon" type="image/x-icon" href="./Images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://p6ckrq4q-5501.inc1.devtunnels.ms/style.css" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <nav>
+        <aside class="logo">
+            Product<span>Store</span>
+        </aside>
+        <ul>
+            <li><a href="#Home" >Home</a></li>
+            <li><a href="#Products">Products</a></li>
+            <li><a href="./Signup.html" id="signup-btn">Signup</a></li>
+            <li><a href="./Login.html" id="login-btn">Login</a></li>
+            <li><a href="#Contacts">Contact</a></li>
+        </ul>
+        <div id="hamburger">
+            <i class="fa-solid fa-bars" style="color: #f9fafb;"></i>
+        </div>
+    </nav><br><br><br><br><br><br>
+    <div id="user-container">
+        <span id="user-welcome"></span>
+        <button id="logout-btn" style="margin-left: 10px;">Logout</button>
+    </div>
+    <section id="Home">
+        <aside class="leftside">
+            <header>
+                <h1>Welcome to Product Store </h1>
+                    <p>Access a variety of products like electronics, clothing, and accessories through our easy-to-use REST-ful API. Our fake API delivers realistic product details, including names, prices, categories, and descriptions, making it ideal for developing front-end applications. Whether you're building a prototype or testing your e-commerce skills, start exploring now and bring your online store ideas to life with dynamic content—all without real transactions.</p>
+               
+                <a href="#Products"><button>Go to Products</button></a>
+            </header>
+        </aside>
+        <aside class="rightside">
+            <figure><img src="./Images/Animation - 1727015461501.gif" alt=""></figure>
+        </aside>
+    </section><br><br>
+    <section id="Products">
+        <header>
+            <h1>Products</h1>
+        </header>
+    <main id="product_wrapper"></main></section><br><br><br><br><br><br>
+
+    <section id="Contacts">
+        <article class="left-contact">
+            <img src="./Images/Message.gif" alt="">
+        </article>
+        <article class="right-contact">
+            <h1>Contact Us</h1>
+        <form>
+            <input type="text" name="name" placeholder="Enter Name">
+            <input type="email" name="email"  placeholder="Enter Email">
+           <textarea name="message" id="" placeholder="Write a Message Here"></textarea> 
+            <input type="submit">
+        </form>
+        <footer>
+            <a href="https://www.facebook.com/"><img src="./Images/facebook.png" alt=""></a>
+            <a href="https://github.com/"><img src="./Images/github.png" alt=""></a>
+            <a href="https://www.instagram.com/"> <img src="./Images/instagram.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/akv2424"> <img src="./Images/linkedin.png" alt=""></a>
+            <a href="https://x.com/?lang=en"><img src="./Images/twitter.png" alt=""></aside></a>    
+        </footer> 
+    </section>
+    <section class="copyryt">
+        <span>&#169; 2024 Product Store. All Rights Reserved.</span>
+    </section> 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+        navUl.classList.toggle('show');
+    });
+
+    </script>
+    <script src="./JS/product.js"></script>
+    <script src="./JS/contact.js"></script>
+
+</body>
+</html>
