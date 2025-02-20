@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./Images/Logo.png">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="paySystem">
+        <div class="payment-container">
+            <h2>Secure Payment</h2>
+            <img src="./Images/PayCard.png" alt="">
+    
+            <div class="payment-form">
+                <label for="cardholder-name">Card holder Name</label>
+                <input type="text" id="cardholder-name" placeholder="Anil Vishwakarma">
+    
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9123 4567">
+    
+                <div class="card-details">
+                    <div>
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" placeholder="123">
+                    </div>
+                </div>
+    
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" placeholder="$100.00" disabled>
+    
+                <button id="pay-now-btn">Pay Now</button>
+                <p id="payment-status"></p>
+            </div>
+        </div>
+    </section>
+    <a href="./cart.html"><button style="background-color: rgb(11, 197, 70); margin:50px 0px 10px 60px;">Back to cart</button></a>
+    
+
+    <script src="./JS/payment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="./Images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f5;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    background-color:#6181e7;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+nav .logo span {
+    color: #00e676;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f7c06d;
+    color: #6163ec;
+}
+
+/* Hamburger Menu */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#hamburger > i {
+    font-size: 25px;
+}
+
+/* User container */
+#user-container {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #f7c06d;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#user-welcome {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(6, 188, 6);
+}
+
+#logout-btn {
+    margin-left: 10px;
+    background-color: #4775E2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: tomato;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #BBCEF0;
+        flex-direction: column;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        height: 400px; 
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    #user-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Login Form */
+#login-box {
+    margin: 5% auto;
+    margin-top: 100px;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px #c4d1f1;
+}
+
+.left {
+    padding: 40px;
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 10px);
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 32px;
+    background-color: #4775E2;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: tomato;
+}
+
+@media screen and (max-width: 768px) {
+    #login-box {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+}
+
+
+    </style>
+    <nav>
+        <aside class="logo">
+            Product <span>Store</span>
+        </aside>
+        <ul>
+            <li><a href="./Index.html">Home</a></li>
+            <li><a href="./Index.html#Products">Products</a></li>
+            <li><a href="./Signup.html">Signup</a></li>
+            <li><a href="./Login.html">Login</a></li>
+            <li><a href="./Index.html#Contacts">Contacts</a></li>
+        </ul>
+        <div id="hamburger">
+            <i class="fa-solid fa-bars" style="color: #f9fafb;"></i>
+        </div>
+    </nav>
+
+    <div id="user-container" style="float:right; margin-right: 20px; display: none;">
+        <span id="user-welcome"></span>
+        <button id="logout-btn" style="margin-left: 10px;">Logout</button>
+    </div>
+
+    <div id="login-box">
+        <div class="left">
+            <h1>Login</h1>
+            <input type="text" name="email" placeholder="E-mail" id="email" />
+            <input type="password" name="password" placeholder="Password" id="password" />
+            <input type="submit" name="login_submit" value="Login" id="submitbtn" />
+            <p style="font-size: 14px;">If you have not signed up, please <a href="./Signup.html">Signup</a></p>
+        </div>
+        <div class="right">
+            <img src="./Images/login-image.jpg" alt="Login Image">
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navUl = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+    </script>
+    <script src="./JS/Login.js"></script>
+</body>
+</html>
