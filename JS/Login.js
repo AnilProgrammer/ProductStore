@@ -26,7 +26,7 @@ loginBtn.addEventListener("click", (e) => {
             timer: 1500
         }).then(() => {
             displayCartOption();  // Add the cart option after login
-            window.location.assign("./Index.html#Products"); // Redirect to products page
+            window.location.assign("./#Products"); // Redirect to products page
         });
     } else {
         // SweetAlert for unauthorized user
