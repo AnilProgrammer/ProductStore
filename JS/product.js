@@ -119,8 +119,15 @@ function displayCartOption() {
 function logoutUser() {
     localStorage.removeItem('loggedInUser');
     displayUserWelcome();
-    alert("You have successfully logged out");
-    window.location.assign("./Login.html");
+    
+    Swal.fire({
+        title: "You Logout Successfully!",
+        icon: "success",
+        draggable: true
+    }).then(() => {
+        // Redirect after the user clicks "OK"
+        window.location.assign("./Login.html");
+    });
 }
 
 // Call the function to check and display the user when the page loads
