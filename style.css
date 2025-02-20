@@ -965,7 +965,7 @@ button:disabled {
 .card-details {
     display: flex;
     gap: 1rem;
-    margin-bottom: 0.2rem; 
+    margin-bottom: 0px; 
 }
 
 .card-details div {
